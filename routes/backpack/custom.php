@@ -13,9 +13,12 @@ Route::group([
         (array) config('backpack.base.web_middleware', 'web'),
         (array) config('backpack.base.middleware_key', 'admin')
     ),
-    'namespace'  => 'App\Http\Controllers',
+    'namespace'  => 'App\Http\Controllers\Admin',
 ], function () { 
     Route::get('/admin/register','RegisterController@showRegistrationForm')->name('backpack.auth.register');
     Route::post('/admin/register', 'RegisterController@register');
     // custom admin routes
+    Route::crud('vendors', 'VendorsCrudController');
+    Route::crud('products', 'ProductsCrudController');
+    Route::crud('orders', 'OrdersCrudController');
 }); // this should be the absolute last line of this file

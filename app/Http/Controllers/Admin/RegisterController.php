@@ -54,7 +54,7 @@ class RegisterController extends BackpackRegisterController
     public function showRegistrationForm()
     {
 
-        return backpack_view('admin.auth.register',$this->data);
+        return backpack_view('admin.auth.register');
     }
 
     
